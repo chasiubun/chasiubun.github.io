@@ -98,6 +98,7 @@ body {
   text-align: center;
   border-right: 1rem solid rgb(156, 176, 164, 0);
   font-size: 1.1em;
+
 }
 
 .headerButton > a:link {
@@ -159,6 +160,25 @@ a:active {
 
 #missionStatement{
   text-align: center;
+}
+
+.emailBox{
+  padding: 0.50em;
+}
+
+#emailSubmit{
+  font-size: var(--defaultText);
+  border: none;
+  background-color: #9cb0a4;
+  padding: 15px 32px;
+  color: #394b41;
+  border-radius: 0.75rem;
+}
+
+#emailSubmit:hover{
+  cursor: pointer;
+  text-decoration: underline;
+  position: relative
 }
 
 /* FOOTER CONTENT */
