@@ -1,6 +1,6 @@
 :root{
 --defaultText: 3.2vh;
---colLight: #9cb0a4;
+--colLight: rgb(156, 176, 164);
 --colDark: rgb(128, 140, 132);
 }
 body {
@@ -16,24 +16,25 @@ body {
   margin: 0;
 }
 
+/* ACCESSBILITY CONTENT */
+
 #mobile{
-  /* visibility: hidden; */
   display: none;
 }
 
 @media(max-width: 1000px){
   #web{
-    /* visibility: hidden; */
     display: none;
   }
   #mobile{
-    /* visibility: visible; */
     display: block;
   }
 }
 
+
 #picContain{
   position: relative;
+  z-index: 1;
 }
 
 #coverPic{
@@ -98,10 +99,6 @@ body {
 
 }
 
-
-
-
-
 .menuMain{
   min-width: 24vw;
   text-align: center;
@@ -109,13 +106,16 @@ body {
   padding-bottom:0.5em;
 }
 .subContainer{
+  z-index: 5;
+
   position:absolute;
   margin-top: 0.5em;
   padding-left:0;
   padding-top: .5em;
   border-top: 1.2vh solid #0a5a48;
   width: 24vw;
-  background-color: var(--colLight);
+  background-color: rgb(156, 176, 164, 0.9);
+  ;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.25s,;
