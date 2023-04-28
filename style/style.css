@@ -1,5 +1,7 @@
 :root{
 --defaultText: 3.2vh;
+--colLight: #9cb0a4;
+--colDark: rgb(128, 140, 132);
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, Lato, Roboto, Helvetica Neue,
@@ -12,6 +14,22 @@ body {
     "footer";
   grid-template-rows: auto 1fr auto;
   margin: 0;
+}
+
+#mobile{
+  /* visibility: hidden; */
+  display: none;
+}
+
+@media(max-width: 1000px){
+  #web{
+    /* visibility: hidden; */
+    display: none;
+  }
+  #mobile{
+    /* visibility: visible; */
+    display: block;
+  }
 }
 
 #picContain{
@@ -76,28 +94,68 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
   /* background-color: #B0A49C; */
   align-items: center;
-  overflow: auto;
-  white-space: nowrap;
-  padding: 1em;
   grid-area: banner;
-}
 
-@media(max-width: 700px){
-  .banner{
-    justify-content: left;
-    overflow: auto;
-    white-space: nowrap;
-    overflow-x: scroll;
-
-  }
 }
 
 
-.headerButton{
+
+
+
+.menuMain{
+  min-width: 24vw;
+  text-align: center;
+  padding-top: 0.5em;
+  padding-bottom:0.5em;
+}
+.subContainer{
+  position:absolute;
+  margin-top: 0.5em;
+  padding-left:0;
+  padding-top: .5em;
+  border-top: 1.2vh solid #0a5a48;
+  width: 24vw;
+  background-color: var(--colLight);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.25s,;
+}
+
+.menuMain> :first-child:hover{
+  font-weight: 700;
+}
+
+.menuMain:hover .subContainer{
+  visibility: visible;
+  opacity: 1;
+}
+
+.menuSub{
   max-width: 100%;
   text-align: center;
   border-right: 1rem solid rgb(156, 176, 164, 0);
   font-size: 1.1em;
+  position: relative;
+}
+
+a:link{
+  color: #000000;;
+  text-decoration: none;
+}
+
+a:visited{
+  color: #000000;;
+  text-decoration: none;
+}
+
+
+
+
+.headerButton{
+  text-align:center;
+  font-size: 1.1em;
+  list-style: none;
+  padding: 0.5em;
 
 }
 
@@ -169,7 +227,7 @@ a:active {
 #emailSubmit{
   font-size: var(--defaultText);
   border: none;
-  background-color: #9cb0a4;
+  background-color: var(--colLight);
   padding: 15px 32px;
   color: #394b41;
   border-radius: 0.75rem;
